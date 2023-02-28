@@ -30,6 +30,12 @@
         {
             this.btn_Crawl = new System.Windows.Forms.Button();
             this.datMain = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameRes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Link = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_Log = new System.Windows.Forms.TextBox();
             this.btn_export = new System.Windows.Forms.Button();
             this.lb_dat = new System.Windows.Forms.Label();
@@ -56,12 +62,67 @@
             // datMain
             // 
             this.datMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datMain.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.nameRes,
+            this.Address,
+            this.PhoneNumber,
+            this.Email,
+            this.Link});
             this.datMain.Location = new System.Drawing.Point(10, 57);
             this.datMain.Name = "datMain";
             this.datMain.RowHeadersWidth = 51;
             this.datMain.RowTemplate.Height = 24;
             this.datMain.Size = new System.Drawing.Size(554, 348);
             this.datMain.TabIndex = 1;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "Số thứ tự";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 125;
+            // 
+            // nameRes
+            // 
+            this.nameRes.HeaderText = "Tên";
+            this.nameRes.MinimumWidth = 6;
+            this.nameRes.Name = "nameRes";
+            this.nameRes.ReadOnly = true;
+            this.nameRes.Width = 125;
+            // 
+            // Address
+            // 
+            this.Address.HeaderText = "Địa chỉ";
+            this.Address.MinimumWidth = 6;
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            this.Address.Width = 125;
+            // 
+            // PhoneNumber
+            // 
+            this.PhoneNumber.HeaderText = "Số điện thoại";
+            this.PhoneNumber.MinimumWidth = 6;
+            this.PhoneNumber.Name = "PhoneNumber";
+            this.PhoneNumber.ReadOnly = true;
+            this.PhoneNumber.Width = 125;
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 125;
+            // 
+            // Link
+            // 
+            this.Link.HeaderText = "Link";
+            this.Link.MinimumWidth = 6;
+            this.Link.Name = "Link";
+            this.Link.ReadOnly = true;
+            this.Link.Width = 125;
             // 
             // txt_Log
             // 
@@ -80,6 +141,7 @@
             this.btn_export.TabIndex = 3;
             this.btn_export.Text = "Export";
             this.btn_export.UseVisualStyleBackColor = true;
+            this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
             // 
             // lb_dat
             // 
@@ -90,7 +152,6 @@
             this.lb_dat.Size = new System.Drawing.Size(89, 32);
             this.lb_dat.TabIndex = 4;
             this.lb_dat.Text = "Data: ";
-            this.lb_dat.Click += new System.EventHandler(this.label1_Click);
             // 
             // lb_Log
             // 
@@ -126,6 +187,7 @@
             this.btn_choosePath.TabIndex = 9;
             this.btn_choosePath.Text = "...";
             this.btn_choosePath.UseVisualStyleBackColor = true;
+            this.btn_choosePath.Click += new System.EventHandler(this.btn_choosePath_Click);
             // 
             // label3
             // 
@@ -146,6 +208,7 @@
             this.llb_copyright.TabIndex = 11;
             this.llb_copyright.TabStop = true;
             this.llb_copyright.Text = "@2023 Brother Team";
+            this.llb_copyright.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_copyright_LinkClicked);
             // 
             // frmMain
             // 
@@ -167,7 +230,6 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Restaurant Crawler by Brother Team";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datMain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -188,6 +250,12 @@
         private System.Windows.Forms.Button btn_choosePath;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel llb_copyright;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameRes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PhoneNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Link;
     }
 }
 

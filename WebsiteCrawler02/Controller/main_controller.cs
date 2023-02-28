@@ -6,6 +6,8 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HtmlAgilityPack;
+using HtmlDocument = HtmlAgilityPack.HtmlDocument;
 
 namespace WebsiteCrawler02.Controller
 {
@@ -17,7 +19,7 @@ namespace WebsiteCrawler02.Controller
             {
                 WebClient client = new WebClient();
                 var result = client.DownloadData(url);
-                return (WriteToFile(Encoding.UTF8.GetString(result), path));Console.WriteLine("jjjj");
+                return (WriteToFile(Encoding.UTF8.GetString(result), path));
               
             }
             catch (Exception ex)
@@ -29,15 +31,27 @@ namespace WebsiteCrawler02.Controller
         {
             try
             {
-                  FileStream fs = new System.IO.FileStream(path, System.IO.FileMode.Create, System.IO.FileAccess.Write);
+                FileStream fs = new System.IO.FileStream(path, System.IO.FileMode.Create, System.IO.FileAccess.Write);
                 StreamWriter sw = new System.IO.StreamWriter(fs, new UTF8Encoding(true));
                 sw.WriteLine(content);
                 sw.Flush();
                 sw.Close();
                 fs.Close();
             }
-        catch(Exception ex) { return false; }
+            catch (Exception ex) { return false; }
         return true;
+        }
+        public HtmlDocument getHtmlDoc(string path)
+        {
+            try
+            {
+                var doc = new HtmlDocument();
+                doc.OptionDefaultStreamEncoding = Encoding.UTF8;
+                doc.DetectEncodingAndLoad(path);
+                return doc;
+            }
+            catch (Exception ex) { return null; }
+
         }
     }
 }
