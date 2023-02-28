@@ -39,5 +39,15 @@ namespace WebsiteCrawler02
             Console.WriteLine(testNode.SelectNodes("//a").Where(x => x.HasClass("buttonMoreDetails")).First().Attributes["href"].Value);
             MessageBox.Show(name, "a");
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
