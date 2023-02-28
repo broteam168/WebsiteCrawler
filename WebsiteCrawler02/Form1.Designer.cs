@@ -51,7 +51,7 @@
             this.btn_Crawl.TabIndex = 0;
             this.btn_Crawl.Text = "Crawl";
             this.btn_Crawl.UseVisualStyleBackColor = true;
-            this.btn_Crawl.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Crawl.Click += new System.EventHandler(this.CrawlAction);
             // 
             // datMain
             // 
