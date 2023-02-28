@@ -38,16 +38,17 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(10, 488);
+            this.button1.Location = new System.Drawing.Point(12, 493);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(195, 52);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Start";
+            this.button1.Text = "Crawl";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -58,7 +59,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(539, 348);
+            this.dataGridView1.Size = new System.Drawing.Size(554, 348);
             this.dataGridView1.TabIndex = 1;
             // 
             // textBox1
@@ -110,9 +111,9 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(212, 499);
+            this.textBox2.Location = new System.Drawing.Point(305, 501);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(434, 34);
+            this.textBox2.Size = new System.Drawing.Size(341, 34);
             this.textBox2.TabIndex = 8;
             // 
             // button3
@@ -125,11 +126,22 @@
             this.button3.Text = "...";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(211, 501);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 32);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Logs: ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 565);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.progressBar1);
@@ -161,6 +173,7 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label3;
     }
 }
 
